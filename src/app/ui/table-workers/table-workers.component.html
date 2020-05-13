@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody *ngIf="workers.length > 0">
-      <tr *ngFor="let worker of workers; let item_index = index">
+      <tr *ngFor="let worker of workers ; let item_index = index">
         <th scope="row">{{ item_index +1 }}</th>
         <ng-container *ngIf="selectedWorker != worker.id">
           <td>{{ worker.name }}</td>

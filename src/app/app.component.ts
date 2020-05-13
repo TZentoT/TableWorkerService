@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { MyWorker, MyWorkerType } from './shared/worker.model';
 import { HttpWorkerService } from './shared/services/http-worker.service';
 
@@ -21,6 +21,8 @@ export class AppComponent {
   dropdownList = [];
   selectedItems = [];
   dropdownSettings = {};
+
+  searchStr: string = "";
 
   constructor(
     private httpWorkerService: HttpWorkerService,

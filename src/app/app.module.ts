@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TableWorkersComponent } from './ui/table-workers/table-workers.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddformWorkerComponent } from './ui/addform-worker/addform-worker.component';
+import { SearchPipe } from './shared/pipes/search.pipe';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>)=null;
 
@@ -16,7 +17,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>)=null;
   declarations: [
     AppComponent,
     TableWorkersComponent,
-    AddformWorkerComponent
+    AddformWorkerComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,   

@@ -14,10 +14,17 @@
   (onDeSelectAll)="onDeSelectAll($event)">
   </angular2-multiselect>
   <br>
+  <h5 class="mt-4">Поиск</h5>
+    <div class="row mb-3 ">
+      <div class="col-12">
+        <input type="text" class="form-control" placeholder="Имя Фамилия" [(ngModel)]="searchStr">
+      </div>
+    </div>
+    <br>
   <ng-container *ngIf="!hideProgrammers">
       <app-table-workers 
       [title]=" 'Программисты' "
-      [workers]=" getByType(myWorkersType.programmer)"
+      [workers]=" getByType(myWorkersType.programmer) | search: searchStr"
       (deleteWorker)="onDeleteWorker($event)"
       (changeWorker)="onChangeWorker($event)"
       ></app-table-workers>
@@ -25,7 +32,7 @@
   <ng-container *ngIf="!hideDesigners">
       <app-table-workers 
       [title]=" 'Дизайнеры' "
-      [workers]=" getByType(myWorkersType.designer)"
+      [workers]=" getByType(myWorkersType.designer) | search: searchStr"
       (deleteWorker)="onDeleteWorker($event)"
       (changeWorker)="onChangeWorker($event)"
       ></app-table-workers>
@@ -33,7 +40,7 @@
   <ng-container *ngIf="!hideCopywriters">
       <app-table-workers 
       [title]=" 'Рекламщики' "
-      [workers]=" getByType(myWorkersType.copywriter)"
+      [workers]=" getByType(myWorkersType.copywriter) | search: searchStr"
       (deleteWorker)="onDeleteWorker($event)"
       (changeWorker)="onChangeWorker($event)"
       ></app-table-workers>
@@ -41,7 +48,7 @@
   <ng-container *ngIf="!hideManagers">
       <app-table-workers 
       [title]=" 'Менеджеры' "
-      [workers]=" getByType(myWorkersType.manager)"
+      [workers]=" getByType(myWorkersType.manager) | search: searchStr"
       (deleteWorker)="onDeleteWorker($event)"
       (changeWorker)="onChangeWorker($event)"
       ></app-table-workers>
